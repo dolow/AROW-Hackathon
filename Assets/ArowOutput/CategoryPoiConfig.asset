@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -133896211, guid: 2e738798d1c014545b5332a4dd03cfda, type: 3}
+  m_Name: CategoryPoiConfig
+  m_EditorClassIdentifier: 
+  List:
+  - category: 0
+    subcategoryList:
+    - subcategory: 0
+      subsubcategoryList:
+      - subsubcategory: 2
+        poiPrefab: {fileID: 0}
+      poiPrefab: {fileID: 0}
+    - subcategory: 1
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 2
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 3
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 4
+      subsubcategoryList:
+      - subsubcategory: 0
+        poiPrefab: {fileID: 0}
+      - subsubcategory: 1
+        poiPrefab: {fileID: 0}
+      poiPrefab: {fileID: 0}
+    - subcategory: 5
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}
+  - category: 1
+    subcategoryList:
+    - subcategory: 6
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 7
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 8
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 9
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 10
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 11
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 12
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}
+  - category: 2
+    subcategoryList:
+    - subcategory: 13
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 14
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 15
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 16
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 17
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 18
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 19
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 20
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 21
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 22
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 23
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 24
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 25
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}
+  - category: 3
+    subcategoryList:
+    - subcategory: 26
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 27
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 28
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}
+  - category: 4
+    subcategoryList: []
+    poiPrefab: {fileID: 0}
+  - category: 5
+    subcategoryList:
+    - subcategory: 29
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 30
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 31
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 32
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 33
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}
+  - category: 6
+    subcategoryList:
+    - subcategory: 34
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 35
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    - subcategory: 36
+      subsubcategoryList: []
+      poiPrefab: {fileID: 0}
+    poiPrefab: {fileID: 0}

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1239396829, guid: 2e738798d1c014545b5332a4dd03cfda, type: 3}
+  m_Name: BuildingConfig
+  m_EditorClassIdentifier: 
+  FilePath: Assets/StreamingAssets/meguro.arowmap
+  MeshPatternElement: 2
+  BuildingWallMaterials:
+  - {fileID: 2100000, guid: 31913cb4129f34257942f4849bc2f275, type: 2}
+  - {fileID: 2100000, guid: 765160169b1a949b897433563cfd17a4, type: 2}
+  - {fileID: 2100000, guid: 14d2ddb1b70f441e8a9677fd0e02639b, type: 2}
+  - {fileID: 2100000, guid: c45f6a80d2eb5421dadca6b93a089d8c, type: 2}
+  - {fileID: 2100000, guid: 7c28c90e084c14d11a576d0c39311a5f, type: 2}
+  BuildingWallSliceTopMaterials:
+  - {fileID: 2100000, guid: ccd26bda37a704cd599ddebf5e1246d5, type: 2}
+  - {fileID: 2100000, guid: 820dcece1e9dd4677bb41ac78dc3ffa7, type: 2}
+  - {fileID: 2100000, guid: fc6534306637a41439130beb14330f0d, type: 2}
+  - {fileID: 2100000, guid: 3115671d6216d43eca7c984a91f423d7, type: 2}
+  - {fileID: 2100000, guid: 26de694a4bd06417db53bf6abc578810, type: 2}
+  BuildingWallSliceBottomMaterials:
+  - {fileID: 2100000, guid: 0ecea8b2d4d0844ae9b7c0c9126715b2, type: 2}
+  - {fileID: 2100000, guid: 8c4b33566d9384dc5b0ef7c935f2cf1e, type: 2}
+  - {fileID: 2100000, guid: c97517ce0e2b547779d8ddcf2d6f76f6, type: 2}
+  - {fileID: 2100000, guid: eb99a584a46424ea29901716a2176f1d, type: 2}
+  - {fileID: 2100000, guid: f6dff559ff2e84d459a7d0c2f8c5d5d6, type: 2}
+  BuildingRoofMaterials:
+  - {fileID: 2100000, guid: cabc405ea5c8a4855b1bcf4f23d6aa0f, type: 2}
+  - {fileID: 2100000, guid: b612f5701accc4f55b245ab380350140, type: 2}
+  - {fileID: 2100000, guid: a50c60fd688054ab1bbd406a94761087, type: 2}
+  - {fileID: 2100000, guid: 05294819a622d4c2490d709a68bfbc51, type: 2}
+  - {fileID: 2100000, guid: 31429b187e89748f39bc0ae63cc5214f, type: 2}
+  - {fileID: 2100000, guid: 80eb965c26da846bfafdc5ebee542ab7, type: 2}
+  - {fileID: 2100000, guid: bbe723caf289d4426a4c7875bf992dc5, type: 2}
+  - {fileID: 2100000, guid: 0e8a72d458a014161bcea2c86c16456f, type: 2}
+  - {fileID: 2100000, guid: 34fbf4084d79c41cc9977d2953c31b69, type: 2}
+  - {fileID: 2100000, guid: 65e77cfb43db5456a90017b4261e7844, type: 2}
+  - {fileID: 2100000, guid: faf39895fc5214676810b3b53f81c126, type: 2}
+  BuildingFillGapMaterials:
+  - {fileID: 2100000, guid: c573150b948ed4ae0a4ace3b4b513c28, type: 2}
+  BuildingPatternElement: 1
+  BuildingDrawTypeElement: 0
+  BuildingEditorEnable: 1
+  BuildingColliderElement: 0
+  IsUseRandomSeed: 0
+  RandomSeed: 0
+  LandmarkConfig: {fileID: 0}
+  CategoryPoiConfig: {fileID: 0}
+  FillGapGroundElement: 1

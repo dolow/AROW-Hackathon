@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1326119895, guid: 2e738798d1c014545b5332a4dd03cfda, type: 3}
+  m_Name: PrefabConfigList_demo
+  m_EditorClassIdentifier: 
+  FilePath: Assets/StreamingAssets/meguro.arowmap
+  LargeObjects:
+  - {fileID: 1757925814145788, guid: d6cd15724fb9946a291af80f49823af0, type: 3}
+  - {fileID: 1058923331368878, guid: bf7b3150b92a34438a0c14f070557c12, type: 3}
+  MiddleObjects:
+  - {fileID: 1254246062379700, guid: f9c322b88541e417c9a7a02092466324, type: 3}
+  - {fileID: 1715344692087906, guid: 5dd0d536e4ab44bf1a20f474045a7ba8, type: 3}
+  SmallObjects:
+  - {fileID: 1724719545096176, guid: 8b90165a596e649e3bdb0600ce688938, type: 3}
+  - {fileID: 1872928484855962, guid: 76c19522ad0534c80a45bfe3cecb3141, type: 3}
+  LargeScale: 60
+  MiddleScale: 30
+  Scale: 0.3
+  IsSquare: 0
+  IsUseRandomSeed: 0
+  RandomSeed: 0
+  FillGapGroundElement: 1
+  FillGapGroundMaterilal:
+  - {fileID: 2100000, guid: c573150b948ed4ae0a4ace3b4b513c28, type: 2}

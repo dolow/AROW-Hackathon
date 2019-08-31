@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1591528156, guid: 2e738798d1c014545b5332a4dd03cfda, type: 3}
+  m_Name: LandmarkPoiConfig_DemoSample
+  m_EditorClassIdentifier: 
+  List:
+  - landmark: -1
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 0
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 1
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 2
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 3
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 4
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 5
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 6
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 7
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 8
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 9
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 10
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 11
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 12
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 13
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 14
+    LandmarkPrefab: {fileID: 0}
+  - landmark: 15
+    LandmarkPrefab: {fileID: 1873678839551598, guid: b36c36c0e1d47447ab6a8835630252fe,
+      type: 3}
