@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalController : CheckPointController
 {
@@ -12,6 +13,9 @@ public class GoalController : CheckPointController
             {
                 gameLogic.OnPlayerGoaled();
             }
+            SceneManager.LoadScene("GoalScene");
         }
     }
 }
+
+
