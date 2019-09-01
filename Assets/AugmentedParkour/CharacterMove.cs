@@ -5,8 +5,8 @@
 /// </summary>
 public class CharacterMove : MonoBehaviour
 {
-    public float speed = 8f;
-    public float rotateSpeed = 120f;
+    public float speed = 16f;
+    public float rotateSpeed = 160f;
 
     public bool RestrictionOnControl = true;
 
@@ -16,8 +16,8 @@ public class CharacterMove : MonoBehaviour
     Vector3 velocity = new Vector3(0, 0, 0);
     Vector3 befPos = new Vector3(0, 0, 0);
 
-    const float WALK_VELOCITY = 0.2f;
-    const float JAMP = 20f;
+    const float WALK_VELOCITY = 40.0f;
+    const float JAMP = 40f;
     const float JAMP_CHARGE_TIME = 4f;
 
     bool isJumping = false;

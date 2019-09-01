@@ -49,7 +49,7 @@ public class Game : MonoBehaviour
     private byte[] mapDataBytes;
 
     // AROWMAPのバイナリを扱いやすくしたデータ
-    private ArowMapObjectModel arowMapObjectModel = null;
+    public ArowMapObjectModel arowMapObjectModel = null;
 
     // 保持用変数
     private Vector2Int worldCenter = Vector2Int.zero;

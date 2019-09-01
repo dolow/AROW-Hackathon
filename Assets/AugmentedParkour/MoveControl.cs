@@ -112,7 +112,9 @@ public class MoveControl : MonoBehaviour
                 break;
             case STATE_AROW_MAP.SETTING_PARKOUR_OBJECT:
                 GameLogic gameLogic = this.gameObject.AddComponent<GameLogic>();
-                AddDebugObjects(gameLogic);
+                GameObject plane = GameObject.Find("Plane");
+                plane.SetActive(false);
+                AddObjects(gameLogic);
                 state = STATE_AROW_MAP.PLAYING_GAME;
                 break;
             case STATE_AROW_MAP.PLAYING_GAME:
@@ -127,22 +129,63 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] GameObject CheckPoint = null;
     [SerializeField] GameObject Goal = null;
-    private void AddDebugObjects(GameLogic gameLogic)
+
+    private void AddCheckPoint(float x, float z, GameLogic gameLogic)
     {
-        Debug.Log("called ");
-        Vector3 pos = GameObject.Find("unitychan").transform.position;
-        if (CheckPoint)
+        Vector3 vec3 = new Vector3();
+        vec3.x = x;
+        vec3.y = 10000.0f;
+        vec3.z = z;
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(vec3, Vector3.down, out hitInfo))
         {
-            GameObject checkpoint = Instantiate(CheckPoint, new Vector3(pos.x + 1, 75, pos.z), Quaternion.identity);
+            Vector3 initPos = hitInfo.point;
+            initPos.y += 1.0f;
+            GameObject checkpoint = Instantiate(CheckPoint, initPos, Quaternion.identity);
             checkpoint.GetComponent<CheckPointController>().gameLogic = gameLogic;
             checkpoint.SetActive(true);
         }
-        if (Goal)
+    }
+    private void AddObjects(GameLogic gameLogic)
+    {
+        System.Random rand = new System.Random();
+
+        // checkpoints
+        GameObject gameMain = GameObject.Find("GameMain");
+        Game gameComponent = gameMain.GetComponent<Game>();
+        Vector2 worldCenter = gameComponent.GetWorldCenter();
+        var models = gameComponent.arowMapObjectModel.RoadDataModels;
+        var worldScale = ArowMain.Runtime.CreateModelScripts.MapUtility.WorldScale;
+
+        for (int i = 0; i < models.Count; i++)
         {
-            GameObject goal = Instantiate(Goal, new Vector3(pos.x - 1, 75, pos.z), Quaternion.identity);
-            goal.GetComponent<GoalController>().gameLogic  = gameLogic;
-            goal.SetActive(true);
+            if (rand.Next() % 2 != 0)
+            {
+                continue;
+            }
+            Vector2 vec2 = new Vector2(
+               (models[i].Positions[0].Position.EastLon - worldCenter.x) * worldScale.x,
+               (models[i].Positions[0].Position.NorthLat - worldCenter.y) * worldScale.y
+            );
+
+            AddCheckPoint(vec2.x, vec2.y, gameLogic);
         }
+
+        GameObject buildings = GameObject.Find("building_parent");
+        int count = buildings.transform.childCount;
+        
+        for (int i = 0; i < count; i++)
+        {
+            Transform child = buildings.transform.GetChild(i);
+            AddCheckPoint(child.position.x, child.position.z, gameLogic);
+        }
+
+        // goal next to player
+        Vector3 pos = GameObject.Find("unitychan").transform.position;
+        GameObject goal = Instantiate(Goal, new Vector3(pos.x - 1, 75, pos.z), Quaternion.identity);
+        goal.GetComponent<GoalController>().gameLogic  = gameLogic;
+        goal.SetActive(true);
     }
 
     private void OnGUI()

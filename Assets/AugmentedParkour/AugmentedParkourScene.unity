@@ -284,6 +284,26 @@ PrefabInstance:
       propertyPath: RestrictionOnControl
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 54849002168154408, guid: 884d11e5f2b2f439c8f6b65496d3dd14,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54849002168154408, guid: 884d11e5f2b2f439c8f6b65496d3dd14,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136124362094767588, guid: 884d11e5f2b2f439c8f6b65496d3dd14,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136124362094767588, guid: 884d11e5f2b2f439c8f6b65496d3dd14,
+        type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114627627604065660, guid: 884d11e5f2b2f439c8f6b65496d3dd14, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 884d11e5f2b2f439c8f6b65496d3dd14, type: 3}
