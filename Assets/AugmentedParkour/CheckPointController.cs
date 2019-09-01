@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class CheckPointController : MonoBehaviour
 {
-    [SerializeField] GameLogic gameLogic;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] public GameLogic gameLogic;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            gameLogic.countUpCPoint();
+            if (gameLogic != null)
+            {
+                gameLogic.countUpCPoint();
+            }
         }
     }
 }

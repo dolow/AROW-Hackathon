@@ -15,6 +15,7 @@ public class MoveControl : MonoBehaviour
         CREATE_ROAD,			// 道の生成.
         CREATE_BUILDING,		// 建物の生成.
         SETTING_POI_OBSERVSER,
+        SETTING_PARKOUR_OBJECT, // このゲームで用いるオブジェクトの配置
         PLAYING_GAME,			//
     };
 
@@ -107,12 +108,15 @@ public class MoveControl : MonoBehaviour
 
             case STATE_AROW_MAP.SETTING_POI_OBSERVSER:
                 game.InitializePoiObserver();
+                state = STATE_AROW_MAP.SETTING_PARKOUR_OBJECT;
+                break;
+            case STATE_AROW_MAP.SETTING_PARKOUR_OBJECT:
+                GameLogic gameLogic = this.gameObject.AddComponent<GameLogic>();
+                AddDebugObjects(gameLogic);
                 state = STATE_AROW_MAP.PLAYING_GAME;
                 break;
-
             case STATE_AROW_MAP.PLAYING_GAME:
                 break;
-
             default:
                 Debug.Assert(false);
                 break;
@@ -121,7 +125,25 @@ public class MoveControl : MonoBehaviour
         StatusText.text = state.ToString();
     }
 
-
+    [SerializeField] GameObject CheckPoint = null;
+    [SerializeField] GameObject Goal = null;
+    private void AddDebugObjects(GameLogic gameLogic)
+    {
+        Debug.Log("called ");
+        Vector3 pos = GameObject.Find("unitychan").transform.position;
+        if (CheckPoint)
+        {
+            GameObject checkpoint = Instantiate(CheckPoint, new Vector3(pos.x + 1, 75, pos.z), Quaternion.identity);
+            checkpoint.GetComponent<CheckPointController>().gameLogic = gameLogic;
+            checkpoint.SetActive(true);
+        }
+        if (Goal)
+        {
+            GameObject goal = Instantiate(Goal, new Vector3(pos.x - 1, 75, pos.z), Quaternion.identity);
+            goal.GetComponent<GoalController>().gameLogic  = gameLogic;
+            goal.SetActive(true);
+        }
+    }
 
     private void OnGUI()
     {

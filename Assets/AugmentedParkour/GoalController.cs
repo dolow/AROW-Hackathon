@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GoalController : CheckPointController
 {
-    [SerializeField] GameLogic gameLogic;
+    [SerializeField] public GameLogic gameLogic;
 
     void OnTriggerEnter(Collider other)
     {
