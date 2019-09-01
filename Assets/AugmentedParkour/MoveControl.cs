@@ -205,103 +205,7 @@ public class MoveControl : MonoBehaviour
         switch (state)
         {
             case STATE_AROW_MAP.SETTING_MAP:
-                if (GUI.Button(new Rect(400, 400, 100, 50), "test button"))
-                {
-                    Timer instance = this.gameObject.GetComponent<Timer>();
-                    if (instance != null)
-                    {
-                        Debug.Log("CurrentTime");
-                        Debug.Log(instance.CurrentTime);
-                        Debug.Log("Enabled ?");
-                        Debug.Log(instance.countdownEnabled);
-                        instance.countdownEnabled = true;
-                    }
-                    else
-                    {
-                        instance = this.gameObject.AddComponent<Timer>();
-                        instance.SetDelegate(delegate ()
-                        {
-                            Debug.Log("callback called !");
-                        });
-                        Debug.Log("CurrentTime");
-                        Debug.Log(instance.CurrentTime);
-                        Debug.Log("SetCurrentTime");
-                        instance.CurrentTime = 5.0f;
-                        Debug.Log(instance.CurrentTime);
-                        Debug.Log(instance.CurrentTime);
-                    }
-
-                }
-
-                if (GUI.Button(new Rect(50, 50, 100, 50), isCreate3DGround ? "立体地面" : "平面地面"))
-                {
-                    isCreate3DGround = !isCreate3DGround;
-                }
-
-                if (isCreate3DGround)
-                {
-                    groundHeightScale = GUI.HorizontalSlider(new Rect(50, 110, 100, 50), groundHeightScale, 1f, 20f);
-                    GUI.Label(new Rect(155, 110, 100, 50), "標高強調:" + groundHeightScale.ToString("00.0"));
-                }
-
-                if (GUI.Button(new Rect(x, y, 100, 50), isCreateRoadObjOrTex ? "道　作成" : "道　未作成"))
-                {
-                    isCreateRoadObjOrTex = !isCreateRoadObjOrTex;
-                }
-
-                y += BetweenY;
-
-                if (isCreate3DGround)
-                {
-                    if (GUI.Button(new Rect(x, y, 100, 50), isHeightColor ? "高さ 色分け" : "一色"))
-                    {
-                        isHeightColor = !isHeightColor;
-                    }
-
-                    y += BetweenY;
-
-                    if (GUI.Button(new Rect(x, y, 100, 50), !isToonLighting ? "影　ノーマル" : "影　トゥーン"))
-                    {
-                        isToonLighting = !isToonLighting;
-                    }
-                }
-
-                x += BetweenX;
-                y = ToggleTopButtonY;
-
-                if (GUI.Button(new Rect(x, y, 100, 50), isCreateBuilding ?  "ビル作成" : "ビルなし"))
-                {
-                    isCreateBuilding = !isCreateBuilding;
-                }
-
-                y += BetweenY;
-
-                if (isCreateBuilding)
-                {
-                    if (GUI.Button(new Rect(x, y, 100, 50), useConfigAsset ?  "asset から\nビル生成" : "asset なしで\nビル生成"))
-                    {
-                        useConfigAsset = !useConfigAsset;
-                    }
-
-                    y += BetweenY;
-
-                    if (GUI.Button(new Rect(x, y, 100, 50), useLandmarkConfig ?  "landmark置換あり" : "landmark置換なし"))
-                    {
-                        useLandmarkConfig = !useLandmarkConfig;
-                    }
-
-                    y += BetweenY;
-
-                    if (GUI.Button(new Rect(x, y, 100, 50), usePoiConfig ?  "POI置換あり" : "POI置換なし"))
-                    {
-                        usePoiConfig = !usePoiConfig;
-                    }
-
-                    y += BetweenY;
-                }
-
-                //
-                if (GUI.Button(new Rect(BetweenX * 3 + 20, BetweenY * 6, 120, 50),  "地図作成"))
+                if (GUI.Button(new Rect(BetweenX * 3 + 20, BetweenY * 6, 120, 50),  "ゲームスタート"))
                 {
                     if (isCreate3DGround)
                     {
@@ -342,16 +246,6 @@ public class MoveControl : MonoBehaviour
                 }
 
                 break;
-        }
-
-        if (GUI.Button(new Rect(Screen.width - 100 - 50, 50, 100, 50),  "シーン再ロード"))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_MoveControlCreatedMap", UnityEngine.SceneManagement.LoadSceneMode.Single);
-        }
-
-        if (GUI.Button(new Rect(Screen.width - 100 - 50, Screen.height - 50 - 50, 100, 50), "スタートシーンへ"))
-        {
-            ArowSceneManager.ChangeScene(ArowSceneManager.StartSceneName);
         }
     }
 }

@@ -37,7 +37,6 @@ public class Timer : MonoBehaviour
         }
 
         currentTime -= Time.deltaTime;
-		Debug.Log(currentTime);
 
         if (currentTime <= 0.0f)
         {
