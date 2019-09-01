@@ -137,17 +137,30 @@ public class MoveControl : MonoBehaviour
             case STATE_AROW_MAP.SETTING_MAP:
                 if (GUI.Button(new Rect(400, 400, 100, 50), "test button"))
                 {
-                    GameLogic instance = this.gameObject.AddComponent<GameLogic>();
-                    Debug.Log("current state");
-                    Debug.Log(instance.CurrentState);
-                    Debug.Log("increment state");
-                    instance.IncrementState();
-                    Debug.Log(instance.CurrentState);
-                    Debug.Log("set state");
-                    instance.CurrentState = GameLogic.State.Ended;
-                    Debug.Log(instance.CurrentState);
-                    Debug.Log("should be warn when incrementing ended state");
-                    instance.IncrementState();
+                    Timer instance = this.gameObject.GetComponent<Timer>();
+                    if (instance != null)
+                    {
+                        Debug.Log("CurrentTime");
+                        Debug.Log(instance.CurrentTime);
+                        Debug.Log("Enabled ?");
+                        Debug.Log(instance.countdownEnabled);
+                        instance.countdownEnabled = true;
+                    }
+                    else
+                    {
+                        instance = this.gameObject.AddComponent<Timer>();
+                        instance.SetDelegate(delegate ()
+                        {
+                            Debug.Log("callback called !");
+                        });
+                        Debug.Log("CurrentTime");
+                        Debug.Log(instance.CurrentTime);
+                        Debug.Log("SetCurrentTime");
+                        instance.CurrentTime = 5.0f;
+                        Debug.Log(instance.CurrentTime);
+                        Debug.Log(instance.CurrentTime);
+                    }
+
                 }
 
                 if (GUI.Button(new Rect(50, 50, 100, 50), isCreate3DGround ? "立体地面" : "平面地面"))
