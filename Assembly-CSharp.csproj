@@ -103,6 +103,7 @@
     <Compile Include="Assets\AugmentedParkour\FollowCamera.cs" />
     <Compile Include="Assets\AugmentedParkour\Game.cs" />
     <Compile Include="Assets\AugmentedParkour\GameLogic.cs" />
+    <Compile Include="Assets\AugmentedParkour\GoalController.cs" />
     <Compile Include="Assets\AugmentedParkour\MoveControl.cs" />
     <Compile Include="Assets\AugmentedParkour\NodeMapHolder.cs" />
     <Compile Include="Assets\AugmentedParkour\PoiVisitor.cs" />

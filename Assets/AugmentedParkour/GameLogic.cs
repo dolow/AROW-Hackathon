@@ -51,4 +51,9 @@ public class GameLogic : MonoBehaviour
         checkPointCount++;
         Debug.Log(checkPointCount);
     }
+
+    public void OnPlayerGoaled()
+    {
+        Debug.Log("goal stub");
+    }
 }
