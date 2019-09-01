@@ -12,6 +12,8 @@ public class GameLogic : MonoBehaviour
         Ended
     }
 
+    private int checkPointCount = 0;    //CheckPointCount
+
     private State currentState = State.NotInitialized;
 
     public State CurrentState {
@@ -22,6 +24,8 @@ public class GameLogic : MonoBehaviour
             currentState = value;
         }
     }
+
+
 
     public void IncrementState()
     {
@@ -40,5 +44,11 @@ public class GameLogic : MonoBehaviour
                 Debug.LogWarning("State has already reached to Ended");
                 break;
         }
+    }
+    
+    public void countUpCPoint()
+    {
+        checkPointCount++;
+        Debug.Log(checkPointCount);
     }
 }
