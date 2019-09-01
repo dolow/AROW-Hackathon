@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class GameLogic : MonoBehaviour
         Ended
     }
 
+    [SerializeField] public GameObject TimeText;
+    [SerializeField] public GameObject ScoreText;
+
+    private Timer timer;
     private int checkPointCount = 0;    //CheckPointCount
 
     private State currentState = State.NotInitialized;
@@ -22,30 +27,53 @@ public class GameLogic : MonoBehaviour
         }
         set {
             currentState = value;
+            if (currentState == State.Started)
+            {
+                GameStart();
+            }
         }
     }
 
+    void Update()
+    {
+        if (TimeText)
+        {
+            Text time = TimeText.GetComponent<Text>();
+            time.text = "Time: " + timer.CurrentTime.ToString();
+        }
+        if (ScoreText)
+        {
+            Text score = ScoreText.GetComponent<Text>();
+            score.text = "Score: " + checkPointCount;
+        }
+    }
 
+    public void GameStart()
+    {
+        timer = this.gameObject.AddComponent<Timer>();
+        timer.CurrentTime = 60.0f;
+        timer.countdownEnabled = true;
+    }
 
     public void IncrementState()
     {
         switch (currentState)
         {
             case State.NotInitialized:
-                currentState = State.Initialized;
+                CurrentState = State.Initialized;
                 break;
             case State.Initialized:
-                currentState = State.Started;
+                CurrentState = State.Started;
                 break;
             case State.Started:
-                currentState = State.Ended;
+                CurrentState = State.Ended;
                 break;
             case State.Ended:
                 Debug.LogWarning("State has already reached to Ended");
                 break;
         }
     }
-    
+
     public void countUpCPoint()
     {
         checkPointCount++;

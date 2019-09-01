@@ -57,7 +57,7 @@ public class MoveControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (state)
+		switch (state)
         {
             case STATE_AROW_MAP.DOWNLOAD_AROW_MAP:
                 // stremingAssetの中のデータを使用しているので、サーバーからのダウンロードは行なっていない
@@ -111,14 +111,19 @@ public class MoveControl : MonoBehaviour
                 state = STATE_AROW_MAP.SETTING_PARKOUR_OBJECT;
                 break;
             case STATE_AROW_MAP.SETTING_PARKOUR_OBJECT:
-                GameLogic gameLogic = this.gameObject.AddComponent<GameLogic>();
+				GameLogic gameLogic = this.gameObject.AddComponent<GameLogic>();
                 GameObject plane = GameObject.Find("Plane");
                 plane.SetActive(false);
                 AddObjects(gameLogic);
                 state = STATE_AROW_MAP.PLAYING_GAME;
-                break;
+                gameLogic.TimeText = GameObject.Find("Time");
+                gameLogic.ScoreText = GameObject.Find("Score");
+				gameLogic.CurrentState = GameLogic.State.Started;
+
+				break;
             case STATE_AROW_MAP.PLAYING_GAME:
-                break;
+				
+				break;
             default:
                 Debug.Assert(false);
                 break;
