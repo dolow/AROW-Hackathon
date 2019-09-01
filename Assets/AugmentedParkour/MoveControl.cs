@@ -4,8 +4,6 @@ using UnityEngine.UI;
 using ArowMain.Runtime;
 using ArowSample.Scripts.Runtime;
 
-namespace ArowSampleGame.SampleScripts
-{
 public class MoveControl : MonoBehaviour
 {
     enum STATE_AROW_MAP
@@ -137,6 +135,21 @@ public class MoveControl : MonoBehaviour
         switch (state)
         {
             case STATE_AROW_MAP.SETTING_MAP:
+                if (GUI.Button(new Rect(400, 400, 100, 50), "test button"))
+                {
+                    GameLogic instance = this.gameObject.AddComponent<GameLogic>();
+                    Debug.Log("current state");
+                    Debug.Log(instance.CurrentState);
+                    Debug.Log("increment state");
+                    instance.IncrementState();
+                    Debug.Log(instance.CurrentState);
+                    Debug.Log("set state");
+                    instance.CurrentState = GameLogic.State.Ended;
+                    Debug.Log(instance.CurrentState);
+                    Debug.Log("should be warn when incrementing ended state");
+                    instance.IncrementState();
+                }
+
                 if (GUI.Button(new Rect(50, 50, 100, 50), isCreate3DGround ? "立体地面" : "平面地面"))
                 {
                     isCreate3DGround = !isCreate3DGround;
@@ -258,5 +271,4 @@ public class MoveControl : MonoBehaviour
             ArowSceneManager.ChangeScene(ArowSceneManager.StartSceneName);
         }
     }
-}
 }
