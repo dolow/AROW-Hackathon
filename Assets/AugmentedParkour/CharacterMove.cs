@@ -17,12 +17,6 @@ public class CharacterMove : MonoBehaviour
     Vector3 befPos = new Vector3(0, 0, 0);
 
     const float WALK_VELOCITY = 40.0f;
-    const float JAMP = 40f;
-    const float JAMP_CHARGE_TIME = 4f;
-
-    bool isJumping = false;
-    float jumpChargePower = 0f;
-    float jumpPower = 0f;
 
     // Use this for initialization
     void Start()
@@ -64,35 +58,60 @@ public class CharacterMove : MonoBehaviour
                 animator.SetFloat("Speed", 0.0f);
             }
         }
-
-        if (!Input.GetKey(KeyCode.Space))
-        {
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                isJumping = true;
-                jumpPower = jumpChargePower;
-                jumpChargePower = 0;
-            }
-        }
-
+        
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!isJumping)
+            if (jumpEnable)
             {
-                jumpChargePower += Time.deltaTime;
+                jumpAccelerating = true;
+                jumpEnable = false;
 
-                if (jumpChargePower > JAMP_CHARGE_TIME)
+                if (jumpAccelerateFrameCount >= maxJumpAccelerateFrameCount)
                 {
-                    jumpChargePower = JAMP_CHARGE_TIME;
+                    jumpAccelerating = false;
+                    downForce = downForceConfig;
                 }
-
-                isJumping = false;
-                jumpPower = 0;
             }
         }
         else
         {
-            jumpChargePower = 0f;
+            jumpAccelerateFrameCount--;
+            if (jumpAccelerateFrameCount < 0)
+            {
+                jumpAccelerateFrameCount = 0;
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            jumpAccelerating = false;
+            downForce = downForceConfig;
+        }
+    }
+
+    public bool jumpAccelerating = false;
+    public bool jumpEnable= false;
+    public float jumpForce = 240.0f;
+    public float downForce = 0.0f;
+    public float downForceConfig = 120.0f;
+    public int jumpAccelerateFrameCount = 0;
+    public int maxJumpAccelerateFrameCount = 16;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        jumpAccelerateFrameCount = 0;
+        jumpEnable = true;
+    }
+
+    void CalcJump()
+    {
+        if (jumpAccelerating && jumpAccelerateFrameCount < maxJumpAccelerateFrameCount)
+        {
+            jumpAccelerateFrameCount++;
+            charactorRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+        }
+        else
+        {
+            charactorRigidbody.AddForce(Vector3.down * downForce, ForceMode.VelocityChange);
         }
     }
 
@@ -106,13 +125,7 @@ public class CharacterMove : MonoBehaviour
             return;
         }
 
-        if (isJumping)
-        {
-            charactorRigidbody.AddForce(Vector3.up * jumpPower * JAMP, ForceMode.VelocityChange);
-            isJumping = false;
-            jumpChargePower = 0f;
-            jumpPower = 0f;
-        }
+        CalcJump();
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -123,6 +136,25 @@ public class CharacterMove : MonoBehaviour
         transform.localPosition += velocity * speed * Time.fixedDeltaTime;
         // キャラクターの回転
         transform.Rotate(0, h * rotateSpeed * Time.fixedDeltaTime, 0);
+
+        Vector3 vec3 = new Vector3();
+        vec3.x = transform.position.x;
+        vec3.y = 10000.0f;
+        vec3.z = transform.position.z;
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(vec3, Vector3.down, out hitInfo))
+        {
+            if (hitInfo.collider.gameObject.name != "unitychan")
+            {
+                if (hitInfo.point.y > transform.position.y)
+                {
+                    Vector3 newPos = transform.position;
+                    newPos.y = hitInfo.point.y;
+                    transform.position = newPos;
+                }
+            }
+        }
     }
 
 }
