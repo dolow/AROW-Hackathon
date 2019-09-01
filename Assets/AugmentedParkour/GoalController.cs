@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GoalController : CheckPointController
 {
-    [SerializeField] public GameLogic gameLogic;
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
