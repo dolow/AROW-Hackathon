@@ -97,6 +97,13 @@
     <Compile Include="Assets\ArowSample\Scripts\Runtime\TouchManager.cs" />
     <Compile Include="Assets\ArowSample\Scripts\Runtime\TouchUtils.cs" />
     <Compile Include="Assets\ArowSample\Scripts\Runtime\UnityChanAnimator.cs" />
+    <Compile Include="Assets\AugmentedParkour\CharacterMove.cs" />
+    <Compile Include="Assets\AugmentedParkour\CreateRoad.cs" />
+    <Compile Include="Assets\AugmentedParkour\FollowCamera.cs" />
+    <Compile Include="Assets\AugmentedParkour\Game.cs" />
+    <Compile Include="Assets\AugmentedParkour\MoveControl.cs" />
+    <Compile Include="Assets\AugmentedParkour\NodeMapHolder.cs" />
+    <Compile Include="Assets\AugmentedParkour\PoiVisitor.cs" />
     <None Include="Assets\ArowSample\OtherAssets\WalkmanPrefabs\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\ArowSample\OtherAssets\WalkmanPrefabs\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
     <None Include="Assets\ArowSample\OtherAssets\GroundShader\HeightVisibleToon.shader" />
