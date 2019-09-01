@@ -10,7 +10,10 @@ public class GoalController : CheckPointController
     {
         if (other.CompareTag("Player"))
         {
-            gameLogic.OnPlayerGoaled();
+            if (gameLogic)
+            {
+                gameLogic.OnPlayerGoaled();
+            }
         }
     }
 }
